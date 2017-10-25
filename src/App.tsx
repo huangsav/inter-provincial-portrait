@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import routes from './routes/routes';
 import './css/App.css';
 import HeaderComponent from './components/HeaderComponent';
@@ -63,6 +63,7 @@ class App extends React.Component<any, Mode> {
                   <Route key={i}{...item} />
                 })
               }
+              <Redirect from="*" to="/"/>
             </Switch>
           </Content>
         </Layout>

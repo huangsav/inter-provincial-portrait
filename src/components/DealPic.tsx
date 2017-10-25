@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Modal, Button } from 'antd';
-// import AvatarEditor from 'react-avatar-editor';
+//import AvatarEditor from 'react-avatar-editor/AvatarEditor';
 
 interface Pic {
     type: string
@@ -57,8 +57,7 @@ class DealPicModal extends React.Component<Pic, displayState>{
                         color={[255, 255, 255, 0.6]} //RGBA
                         scale={1.2}
                         rotate={0}
-                    />
-                    </AvatarEditor> */}
+                    /> */}
                     </div>
                 </Modal>
             </div>
