@@ -33,7 +33,7 @@ class OneToOnePic extends React.Component<Pic, any>{
                 </Row>
                 <Row type="flex" justify="end">
                     <Col className="buttonCol">
-                        <DealPicModal type={this.props.type}></DealPicModal>
+                        <DealPicModal type={this.props.type} image=""></DealPicModal>
                     </Col>
                 </Row>
                 <Row>
