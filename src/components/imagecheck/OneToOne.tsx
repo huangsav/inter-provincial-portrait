@@ -2,6 +2,7 @@ import * as React from 'react';
 import OneToOnePic from '../OneToOnePic';
 import { Row, Col, Button } from 'antd';
 import Score from '../Score';
+import '../../css/OneToOne.css';
 
 interface OneToOneProps {
 
@@ -43,15 +44,15 @@ class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span={12}>
-                        <Button type="primary" onClick={e => this.oneToOneCheck()}>比对</Button>
+                    <Col span={12} style={{textAlign: "right"}}>
+                        <Button type="primary" onClick={e => this.oneToOneCheck()} style={{marginRight: "5%"}}>比对</Button>
                     </Col>
-                    <Col span={12}>
-                        <Button type="primary" onClick={e => this.reset()}>重新开始</Button>
+                    <Col span={12} style={{textAlign: "left"}}>
+                        <Button type="primary" onClick={e => this.reset()} style={{marginLeft: "5%"}}>重新开始</Button>
                     </Col>
                 </Row>
                 <Row>
-                    <Col style={{textAlign: "centor"}}>
+                    <Col>
                         <Score visable={this.state.scoreVisable} score={this.state.score}/>
                     </Col>
                 </Row>

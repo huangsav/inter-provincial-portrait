@@ -39,17 +39,17 @@ class Score extends React.Component<ScoreProps, ScoreState>{
     render(){
         return (
             <div style={{display: this.props.visable? "" : "none"}}>
-                <Row>
+                <Row type="flex" justify="center">
                     <Col>
                 <span>相似度为：{this.props.score}</span>
                     </Col>
                 </Row>
-                <Row>
+                <Row type="flex" justify="center">
                     <Col>
                         是否确认比中：<Checkbox onChange={e => this.CheckboxChange(e) }/>
                     </Col>
                 </Row>
-                <Row>
+                <Row type="flex" justify="center">
                     <Col>
                         <span>{this.state.msg}</span>
                     </Col>

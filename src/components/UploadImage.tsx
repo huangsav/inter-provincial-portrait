@@ -50,21 +50,25 @@ function getBase64(img: File, callback: Function){
 }
 
 function beforeUpload(file: any) {
-    const isImage = file.type === "image/jpeg";
+    const isImage = file.type === "image/jpeg" || file.type === "image/jpg" || file.type === "image/bmp";
     if(!isImage){
         message.error("只能上传图片！");
+        return false;
     }
     const isLt2M = file.size / 1024 / 1024 < 2;
     if(!isLt2M){
         message.error("图片必须小于2MB!");
+        return false;
     }
 
     var filePath = file.name;
     if (!/\.((jpg)|(bmp)|(jpeg))$/ig.test(filePath)) {
         message.error("格式必须jpg,bmp");
+        return false;
     }
     else if (/['"#$%&+={}\[\]\<\>\(\)\^*]/.test(filePath)) {
         message.error("文件名不能有特殊字符");
+        return false;
     }
     return false;
 

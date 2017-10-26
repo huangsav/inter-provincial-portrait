@@ -1,0 +1,13 @@
+.score{
+    text-align: center;
+}
+
+.bgcol {
+    border: 1px solid transparent;
+    padding: 10px;
+    text-align: center;
+}
+.bgbule {
+    border-color: #bce8f1;
+    text-align: center;
+}
