@@ -1,18 +1,61 @@
 import * as React from 'react';
 import OneToOnePic from '../OneToOnePic';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
+import Score from '../Score';
 
-class OneToOne extends React.Component<any, any> {
-    render(){
+interface OneToOneProps {
+
+}
+
+interface OneToOneState {
+    scoreVisable: boolean,
+    score: string
+}
+
+class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
+    constructor(props: any){
+        super(props);
+        this.state = {
+            scoreVisable: false,
+            score: ""
+        }
+    }
+
+    oneToOneCheck() {
+        this.setState({
+            scoreVisable: true
+        });
+    }
+
+    reset() {
+
+    }
+
+    render() {
         return (
-            <Row>
-                <Col span={12}>
-                    <OneToOnePic type="A"/>
-                </Col>
-                <Col span={12}>
-                    <OneToOnePic type="B"/>
-                </Col>
-            </Row>
+            <div>
+                <Row>
+                    <Col span={12}>
+                        <OneToOnePic type="A"/>
+                    </Col>
+                    <Col span={12}>
+                        <OneToOnePic type="B"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col span={12}>
+                        <Button type="primary" onClick={e => this.oneToOneCheck()}>比对</Button>
+                    </Col>
+                    <Col span={12}>
+                        <Button type="primary" onClick={e => this.reset()}>重新开始</Button>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col style={{textAlign: "centor"}}>
+                        <Score visable={this.state.scoreVisable} score={this.state.score}/>
+                    </Col>
+                </Row>
+            </div>
         );
     }
 }
