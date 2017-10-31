@@ -5,12 +5,16 @@ import Score from '../Score';
 import '../../css/OneToOne.css';
 
 interface OneToOneProps {
-
+    dispatch: any;
+    url: string;
+    setUrl(url:string): any;
 }
 
 interface OneToOneState {
-    scoreVisable: boolean,
-    score: string
+    scoreVisable: boolean;
+    score: string;
+    imageA: string;
+    imageB: string;
 }
 
 class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
@@ -18,8 +22,11 @@ class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
         super(props);
         this.state = {
             scoreVisable: false,
-            score: ""
+            score: "",
+            imageA: "",
+            imageB: ""
         }
+
     }
 
     oneToOneCheck() {
@@ -37,10 +44,10 @@ class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
             <div>
                 <Row>
                     <Col span={12}>
-                        <OneToOnePic type="A"/>
+                        <OneToOnePic type="A" image={this.state.imageA}/>
                     </Col>
                     <Col span={12}>
-                        <OneToOnePic type="B"/>
+                        <OneToOnePic type="B" image={this.state.imageB}/>
                     </Col>
                 </Row>
                 <Row>
@@ -61,4 +68,8 @@ class OneToOne extends React.Component<OneToOneProps, OneToOneState> {
     }
 }
 
+// export default connect(
+//     (state) => ({url: state.url}),
+//     (dispatch) => ({ setUrl: (url: string) => dispatch({type: 'GET_IMAGE', url})})
+// )(OneToOne);
 export default OneToOne;

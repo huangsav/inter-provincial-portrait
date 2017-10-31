@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { Upload, Icon, message } from 'antd';
-import '../css/UploadImage.css'
+import '../css/UploadImage.css';
+import { connect } from 'react-redux';
+import { userAction } from '../store/actions/actions';
 
 interface AvatarState {
     imageUrl: string
 }
 
 interface AvatarPic {
-    type: string
+    type: string;
+    dispatch?: any;
 }
 
 class Avatar extends React.Component<AvatarPic, AvatarState>{
@@ -20,6 +23,9 @@ class Avatar extends React.Component<AvatarPic, AvatarState>{
     
     handleChange = (info: any) => {
         getBase64(info.file, (imageUrl: string) => this.setState({ imageUrl }));
+        alert(info.file);
+
+        this.props.dispatch(userAction('GET_IMAGE', {image: info.file}));
     }
 
     render() {
@@ -74,4 +80,10 @@ function beforeUpload(file: any) {
 
 }
 
-export default Avatar;
+const mapStateToProps = (state: any, ownProps: any) => {
+  return { state: state };
+}
+
+export default connect(
+  mapStateToProps,
+)(Avatar as any);

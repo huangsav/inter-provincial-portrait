@@ -6,7 +6,8 @@ import DealPicModal from './DealPic';
 import '../css/OneToOnePic.css'
 
 interface Pic {
-    type: string
+    type: string;
+    image: any;
 }
 
 class OneToOnePic extends React.Component<Pic, any>{
@@ -33,7 +34,7 @@ class OneToOnePic extends React.Component<Pic, any>{
                 </Row>
                 <Row type="flex" justify="end">
                     <Col className="buttonCol">
-                        <DealPicModal type={this.props.type} image=""></DealPicModal>
+                        <DealPicModal type={this.props.type} image={this.props.image}></DealPicModal>
                     </Col>
                 </Row>
                 <Row>

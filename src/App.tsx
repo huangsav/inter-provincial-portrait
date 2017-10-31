@@ -5,7 +5,7 @@ import './css/App.css';
 import HeaderComponent from './components/HeaderComponent';
 import MenuComponent from './components/MenuComponent';
 import BreadCrumComponent from './components/BreadCrumbComponent';
-import { userAction } from './store/actions';
+import { userAction } from './store/actions/actions';
 import{ connect } from 'react-redux';
 import { Layout } from 'antd';
 const { Content, Sider } = Layout;
@@ -23,7 +23,7 @@ class App extends React.Component<any, Mode> {
       collapsed: false
     };
 
-    this.props.dispatch(userAction('GET_USER1'));
+    this.props.dispatch(userAction('GET_USER1', ''));
     window.addEventListener('resize', this.onResize);
   }
   toggle = () => {

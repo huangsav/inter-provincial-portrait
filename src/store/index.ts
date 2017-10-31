@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
-import {getUser} from './reducer';
+import reducer from './reducers/reducer';
 
-export const store = createStore(getUser);
+export const store = createStore(reducer);
 
 store.subscribe(() => {
     console.log(store.getState());

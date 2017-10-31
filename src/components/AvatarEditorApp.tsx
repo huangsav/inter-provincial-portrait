@@ -138,7 +138,7 @@ class AvatarEditorApp extends React.Component<AvatarEditorAppProps, AvatarEditor
         return (
             <div>
                 <AvatarEditor
-                    image={this.state.image}
+                    image={this.props.image}
                     position={this.state.position}
                     width={this.state.width}
                     height={this.state.height}
@@ -148,7 +148,6 @@ class AvatarEditorApp extends React.Component<AvatarEditorAppProps, AvatarEditor
                     scale={this.state.scale}
                     rotate={this.state.rotate}
                 />
-                
                 <Row>
                     <Col>
                         Zoom: 

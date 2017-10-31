@@ -23,6 +23,7 @@ class DealPicModal extends React.Component<Pic, displayState>{
         this.setState({
                 visible: true
         });
+        alert(this.props.image);
     }
 
     handleok = (e: React.MouseEvent<HTMLElement>) => {
@@ -52,7 +53,7 @@ class DealPicModal extends React.Component<Pic, displayState>{
 
                 >
                     <div>
-                    <AvatarEditorApp image=""/>
+                    <AvatarEditorApp image={this.props.image}/>
                     </div>
                 </Modal>
             </div>
